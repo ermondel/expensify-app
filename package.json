@@ -1,0 +1,19 @@
+{
+  "name": "udemy-expensify-app",
+  "version": "1.0.0",
+  "description": "udemy-expensify-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermondel/udemy-expensify-app.git"
+  },
+  "author": "ermondel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ermondel/udemy-expensify-app/issues"
+  },
+  "homepage": "https://github.com/ermondel/udemy-expensify-app#readme"
+}

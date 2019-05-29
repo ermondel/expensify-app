@@ -8,7 +8,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server --port 3000"
+    "dev-server": "webpack-dev-server --port 3000",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -18,6 +19,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
+    "jest": "^24.8.0",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",

@@ -1,40 +1,42 @@
 const path = require('path');
 
-module.exports = {
+module.exports = env => {
+  const isProduction = env === 'production';
+
+  return {
     entry: './src/app.js',
-    // entry: './src/playground/redux-expensify.js',
-    // entry: './src/playground/hoc.js',
     output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
+      path: path.join(__dirname, 'public'),
+      filename: 'bundle.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: ["@babel/plugin-proposal-class-properties"]
-                    },
-                },
-                exclude: /node_modules/
-            },
-            {
-                test: /\.s?css$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' },
-                    { loader: 'sass-loader' },
-                ]
+      rules: [
+        {
+          test: /\.js$/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: ['@babel/plugin-proposal-class-properties']
             }
-        ]
+          },
+          exclude: /node_modules/
+        },
+        {
+          test: /\.s?css$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            { loader: 'sass-loader' }
+          ]
+        }
+      ]
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
-        historyApiFallback: true
+      contentBase: path.join(__dirname, 'public'),
+      historyApiFallback: true
     },
     mode: 'development'
-}
+  };
+};

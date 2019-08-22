@@ -54,6 +54,6 @@ module.exports = env => {
       historyApiFallback: true,
       publicPath: '/dist/'
     },
-    mode: isProduction ? 'production' : 'development'
+    mode: 'development'
   };
 };

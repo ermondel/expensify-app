@@ -1,7 +1,4 @@
 /node_modules
 package-lock.json
 **/__snapshots__
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
+public/dist/

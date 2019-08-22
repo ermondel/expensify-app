@@ -10,7 +10,9 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server --port 3000",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "server": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",

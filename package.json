@@ -11,7 +11,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server --port 3000",
     "test": "jest --config=jest.config.json",
-    "server": "node server/server.js",
+    "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "dependencies": {

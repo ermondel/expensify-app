@@ -1,4 +1,4 @@
-// total selector getExpensesTotal
+// total
 export default expenses => {
   return expenses && expenses.length > 0
     ? expenses.reduce(

@@ -6,20 +6,50 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().on(
-  'value',
-  snapshot => {
-    const val = snapshot.val();
-    console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-  },
-  error => {
-    console.log('Error with data fetching.', error);
-  }
-);
+database.ref('expenses').push({
+  description: 'test1',
+  note: 'test1',
+  amount: 12312,
+  createdAt: '1567022101'
+});
 
-setTimeout(() => {
-  database.ref('name').set('Mike');
-}, 2500);
+database.ref('expenses').push({
+  description: 'test2',
+  note: 'test2',
+  amount: 78,
+  createdAt: '1567022101'
+});
+
+database.ref('expenses').push({
+  description: 'test3',
+  note: 'test3',
+  amount: 8312,
+  createdAt: '1567022101'
+});
+
+// database.ref('notes/-LnOkxYEYHt0gf_KpDCs').update({
+//   body: 'test1'
+// });
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// database.ref().on(
+//   'value',
+//   snapshot => {
+//     const val = snapshot.val();
+//     console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+//   },
+//   error => {
+//     console.log('Error with data fetching.', error);
+//   }
+// );
+
+// setTimeout(() => {
+//   database.ref('name').set('Mike');
+// }, 2500);
 
 // const onValueChange = database.ref().on(
 //   'value',

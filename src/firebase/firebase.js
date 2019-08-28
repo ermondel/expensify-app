@@ -11,7 +11,11 @@ database
   .set({
     name: 'erm',
     age: 1,
-    isSingle: true,
+    stressLevel: 6,
+    job: {
+      title: 'Software developer',
+      company: 'Google'
+    },
     location: {
       city: 'San Francisco',
       country: 'United States'
@@ -24,7 +28,18 @@ database
     console.log('This failed.', error);
   });
 
-database.ref('isSingle').set(null);
+database.ref().update({
+  stressLevel: 9,
+  'job/company': 'Amazon',
+  'location/city': 'Seattle'
+});
+
+// database.ref().update({
+//   job: 'Manager',
+//   'location/city': 'Los Angeles'
+// });
+
+// database.ref('isSingle').set(null);
 
 // database.ref('age').set(4);
 // database.ref('location/city').set('San Jose');
